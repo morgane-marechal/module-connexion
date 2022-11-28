@@ -1,6 +1,4 @@
-<?php
-include 'dbconnect.php';
-?>
+
 <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" 
@@ -27,7 +25,6 @@ include 'dbconnect.php';
                     </nav>
     </header>
     <body>
-
     <section id="compte_form">
         <form action="" method="post">
             <h3>Création de compte</h3>
@@ -44,6 +41,10 @@ include 'dbconnect.php';
             <i class="small">* Champs obligatoires</i>
         </form>
     </section>
+
+    <?php     /*----inclu les données de connections avec dbconnect-inscription.php-----------*/
+    include 'dbconnect-inscription.php';
+    ?>
     </body>
 
 </body>
