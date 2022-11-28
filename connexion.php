@@ -3,7 +3,7 @@
     <link rel="stylesheet" type="text/css" 
         href="style.css" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
-        <title>Inscription</title>
+        <title>Connexion</title>
 </head>
 
 <body>

@@ -28,7 +28,12 @@
             $exec_requete = mysqli_query($mysqli,$requete);
             $reponse = mysqli_fetch_array($exec_requete);
             $count = $reponse['count(*)'];
-                if($count!=0) // login et mot de passe correctes
+                if($count!=0 && $login=="admin" && $password=="admin"){
+                    echo "Bravo vous êtes connectés en mode administrateur!";
+                    header('Location: http://localhost/module-connexion/admin.php'); // <- redirection vers la page admin
+                    exit();
+        
+                }elseif($count!=0) // login et mot de passe correctes
                 {
                     echo "Bravo vous êtes connectés!";
                 //$_SESSION['username'] = $username;
