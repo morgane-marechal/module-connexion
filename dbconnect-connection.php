@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
     //connection avec la base de donnée
    $mysqli = new mysqli('localhost','root','','moduleconnexion'); /*connexion avec la base de donnée -> rajouter de nouveau utilisateurs*/
@@ -13,6 +13,15 @@
    $name=$_POST['nom'];
    $password=$_POST['password'];
    $checkpassword=$_POST['conf_password'];
+
+   $_SESSION['login'] = $login;
+   $_SESSION['prenom'] = $firstname;
+   $_SESSION['nom'] = $name;
+   $_SESSION['password'] = $password;
+
+
+
+   
    
    /*echo $login;
    echo $firstname;
@@ -36,7 +45,13 @@
                 }elseif($count!=0) // login et mot de passe correctes
                 {
                     echo "Bravo vous êtes connectés!";
-                //$_SESSION['username'] = $username;
+                    $_SESSION['login'] = $login;
+                    $_SESSION['prenom'] = $firstname;
+                    $_SESSION['nom'] = $name;
+                    $_SESSION['password'] = $password;
+                    header('Location: http://localhost/module-connexion/profil.php'); // <- redirection vers la page admin
+                    exit();
+                //$_SESSION['username'] = $username; 
                 //header('Location: principale.php');
                 }
                 else

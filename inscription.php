@@ -1,7 +1,7 @@
+<?php session_start(); ?>
 <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" 
-        href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style2.css" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
         <title>Inscription</title>
 </head>
@@ -23,7 +23,11 @@
                         </ul>
                     </nav>
     </header>
-    <body>
+
+    <div id=welcome>
+        <h1>Bienvenue <?php echo $_SESSION['login'] ?></h1>
+    </div>
+    
     <section id="compte_form">
         <form action="" method="post">
             <h3>Création de compte</h3>
@@ -46,4 +50,13 @@
     ?>
     </body>
 
+
+
+<footer>
+                <ul>
+                    <li><a href="https://github.com/morgane-marechal/module-connexion" target="_blank" ><img class="logo" src="github-noir.png" alt="github"></a></li>
+                    <li><a href="connexion.php">Se connecter</a></li>
+                    <li><a href="inscription.php">S'inscrire</a></li>
+                </ul>
+</footer>
 </body>

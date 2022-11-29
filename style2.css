@@ -6,10 +6,22 @@
 
 body{
     padding:1%,1%,1%,1%;
-    height:1000px;
-    background: #B97400;
+    height:100%;
+    background-color: #9fcabd;
 
 }
+
+#content{
+    background-color: #9fcabd;
+    height:100%;
+}
+
+#content-profil{
+    background-color: #9fcabd;
+    height:100%;
+    display:flex;
+}
+
 
 /* ---menu déroulant---*/
 
@@ -54,6 +66,11 @@ li.menuDeroulant:hover > .sousMenu {
     margin: 1%;
 }
 
+
+#welcome{
+    color:#00adb9;
+    background-color: black;
+}
 /*---formulaire de connexion---*/
 
 
@@ -74,8 +91,31 @@ form {
     background-color: #4E483E;
     border-radius: 5px;
 }
+
+#bloc-form{
+    width:30%;
+    margin:2%;
+
+}
+
+#bloc-text{
+    width:70%;
+    margin:2%;
+}
+
+#profil-form{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #4E483E;
+    border-radius: 5px;
+}
+
 form h3{
     font-size: 1.4em;
+    color: #94fadb;
+    margin-bottom:20px;
 }
 
 label{
@@ -93,26 +133,51 @@ input, select{
     border-radius: 10px;
     color:#4E483E;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
-    background-color: #CAB079;
+    background-color:#94fadb;
+}
+
+.submit:hover{
+    background-color:#00adb9;
 }
 
 
-
+/* ---footer-------*/
 
   footer ul li a{
     width: 100%;
     text-align: center;
     justify-content: center;
     list-style-type: none;
+    text-decoration: none;
+    color:white;
 }
   
   footer ul {
     display: flex;
-    background-color: #B97400;
+    background-color: #302f2f;
     justify-content: space-around;
     align-items: center;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     max-height: 100%;
   }
   
+  table {
+    width:95%;
+    align-items:center;
+    margin: 2%1%1%1%;
+    background-color: #688081;
+  }
+
+  thead{
+    background-color: #334849;
+  }
+
+  td {
+    text-align: center;
+    padding:2px;
+  }
+
+ .logo{
+    width:30%;
+ }

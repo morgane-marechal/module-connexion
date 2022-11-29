@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
     //connection avec la base de donnée
    $mysqli = new mysqli('localhost','root','','moduleconnexion'); /*connexion avec la base de donnée -> rajouter de nouveau utilisateurs*/
    if($mysqli->connect_error){
@@ -13,6 +13,11 @@
    $password = mysqli_real_escape_string($mysqli,htmlspecialchars($_POST['password'])); //protection pour éviter injection SQL malveillante
    $checkpassword = mysqli_real_escape_string($mysqli,htmlspecialchars($_POST['conf_password'])); //protection pour éviter injection SQL malveillante
    
+   $_SESSION['login'] = $login;
+   $_SESSION['prenom'] = $firstname;
+   $_SESSION['nom'] = $name;
+   $_SESSION['password'] = $password;
+   $id_session = session_id();
    /*echo $login;
    echo $firstname;
    echo $name;
@@ -48,6 +53,7 @@
      $mysqli->close();
 
 
+     
 
    
    
