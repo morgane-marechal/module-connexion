@@ -10,7 +10,7 @@
    $login = mysqli_real_escape_string($mysqli,htmlspecialchars($_POST['login'])); //protection pour éviter injection SQL malveillante
    $firstname = mysqli_real_escape_string($mysqli,htmlspecialchars($_POST['prenom'])); //protection pour éviter injection SQL malveillante
    $name = mysqli_real_escape_string($mysqli,htmlspecialchars($_POST['nom'])); //protection pour éviter injection SQL malveillante
-   $password = mysqli_real_escape_string($mysqli,htmlspecialchars($_POST['password'])); //protection pour éviter injection SQL malveillante
+   $password = mysqli_real_escape_string($mysqli,htmlspecialchars($_POST['password'])); 
    $checkpassword = mysqli_real_escape_string($mysqli,htmlspecialchars($_POST['conf_password'])); //protection pour éviter injection SQL malveillante
    
    $_SESSION['login'] = $login;
@@ -30,14 +30,15 @@
             $reponse = mysqli_fetch_array($exec_requete);
             $count = $reponse['count(*)'];
     if ($count==1){
-        echo "<h2>Ce login est déjà pris, veuillez en choisir un autre! </h2>";
+        $error_login="<p>Ce login est déjà pris, veuillez en choisir un autre!</p>";
     }else{
     if (($password==$checkpassword) && (!empty($name)) && (!empty($firstname)) && (!empty($password))){
+            $password = password_hash($password, PASSWORD_DEFAULT); 
             $newuser = "INSERT INTO utilisateurs ( login, prenom, nom, password)
             VALUES( '$login', '$firstname', '$name', '$password')";
 
             if ($mysqli->query($newuser) === TRUE) {
-                echo "Vous avez ajouté un utilisateur avec succés";
+                //echo "Vous avez ajouté un utilisateur avec succés";
                 header('Location: http://localhost/module-connexion/connexion.php'); // <- redirection vers la page connexion si l'inscription fonctionne
                 exit();
                 } else {
@@ -45,17 +46,13 @@
                 " . $mysqli->error;
                 }
         }elseif ((empty($name)) OR (empty($firstname)) OR (empty($password))){
-            echo "L'un des champs du formulaire est vide";
+            $error_empty="L'un des champs du formulaire est vide";
+            echo $error_empty;
         }elseif ($password!=$checkpassword){
-            echo "Veuillez confirmer correctement votre mot de passe!"; 
+            $error_password="Veuillez confirmer correctement votre mot de passe!";
+            echo $error_password;
         }
     }
      $mysqli->close();
-
-
-     
-
-   
-   
    
    ?>  

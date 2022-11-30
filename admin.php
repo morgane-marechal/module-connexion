@@ -31,18 +31,10 @@
 <body>
 <header>
     <nav>
-                        <ul class="navigationList">
-                              <li><a href="index.php">Accueil</a></li>
-                              
-                                <li class="menuDeroulant">
-                                <a href="#" class="navLink">Formulaire de connexion</a>
-                                <ul class="sousMenu">
-                                    <li><a href="connexion.php">Se connecter</a></li>
-                                    <li><a href="inscription.php">S'inscrire</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+        <ul class="navigationList">
+            <li><a href="index.php">Se déconnecter</a></li>
+        </ul>
+    </nav>
 </header>
 <div id=welcome>
         <h1>Bienvenue <?php echo $_SESSION['login'] ?></h1>

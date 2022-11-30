@@ -11,22 +11,15 @@
 <body>
     <header>
     <nav>
-                        <ul class="navigationList">
-                              <li><a href="index.php">Accueil</a></li>
-                                <li class="menuDeroulant">
-                                <a href="#" class="navLink">Formulaire de connexion</a>
-                                <ul class="sousMenu">
-                                    <li><a href="connexion.php">Se connecter</a></li>
-                                    <li><a href="inscription.php">S'inscrire</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+                        
+        <ul class="navigationList">
+            <li><a href="index.php">Se déconnecter</a></li>
+        </ul>
+    </nav>
     </header>
     <div id=welcome>
         <h1>Bienvenue <?php echo $_SESSION['login'] ?></h1>
     </div>
-    <h1>Profil</h1>
     <div id="content-profil">
         <div id="bloc-text">
             <div id="test-php">
@@ -52,7 +45,17 @@
                     echo $result[0][2]."<br>";
                     echo $result[0][3]."<br>";
                     echo $result[0][4]."<br>";
+                    echo "Mot de passe en clair : ".$_SESSION['password'];
+                    echo"<br>";
+
+
+                    //pour avoir version nom cripté du mot de passe
+                    password_verify($password_post, $password_hash)
+
+
                     ?>
+
+
             </div>
 
 
@@ -68,8 +71,8 @@
                         <input type="text" name="nom" id="name" placeholder=<?php echo $result[0][2]; ?> required maxlength="255">
                         <input type="text" name="prenom" id="firstname" placeholder=<?php echo $result[0][3]; ?> required maxlength="255">
                     </div>
-                    <input type="text" name="password" id="password" placeholder= <?php echo $result[0][4]; ?> required maxlength="255">
-                    <input type="text" name="conf_password" id="conf_password" placeholder="Confirmation du nouveau mot de passe*" required maxlength="255">
+                    <input type="text" name="password" id="password" placeholder= <?php echo $_SESSION['password']; ?> required maxlength="255">
+                    <input type="text" name="conf_password" id="conf_password" placeholder="Confirmer modification MP*" required maxlength="255">
 
                     </select>
                     <input class="submit" type="submit" value="Modifier">
