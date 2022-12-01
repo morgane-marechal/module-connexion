@@ -18,11 +18,6 @@
    $_SESSION['nom'] = $name;
    $_SESSION['password'] = $password;
    $id_session = session_id();
-   /*echo $login;
-   echo $firstname;
-   echo $name;
-   echo $password;
-   echo "<br>";*/
 
    //-------------------- code pour le formulaire d'inscription ----------------
    $check_login = "SELECT count(*) FROM utilisateurs where login = '$login'";

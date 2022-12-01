@@ -33,25 +33,19 @@
         <form action="" method="post">
             <h3>Création de compte</h3>
             <div id="fullname">
-                <input type="text" name="login" id="name" placeholder="Login*" required maxlength="255">
+                <input type="text" name="login" id="name" placeholder="Login*" required minlength="3">
                 <?php if ($count==1){ echo $error_login;}?>
-                <input type="text" name="nom" id="name" placeholder="Nom*" required maxlength="255">
-                <input type="text" name="prenom" id="firstname" placeholder="Prénom*" required maxlength="255">
+                <input type="text" name="nom" id="name" placeholder="Nom*" required minlength="2">
+                <input type="text" name="prenom" id="firstname" placeholder="Prénom*" required minlength="2">
             </div>
-            <input type="password" name="password" id="password" placeholder="Password*" required maxlength="255">
-            <input type="password" name="conf_password" id="conf_password" placeholder="Confirmation du mot de passe*" required maxlength="255">
+            <input type="password" name="password" id="password" placeholder="Password*" required minlength="2">
+            <input type="password" name="conf_password" id="conf_password" placeholder="Confirmation du mot de passe*" required minlength="2">
             </select>
             <input class="submit" type="submit" value="Envoyer">
             <i class="small">* Champs obligatoires</i>
         </form>
     </section>
  
-
-    
-   
-
-
-
 <footer>
                 <ul>
                     <li><a href="https://github.com/morgane-marechal/module-connexion" target="_blank" ><img class="logo" src="github-noir.png" alt="github"></a></li>

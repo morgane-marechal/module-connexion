@@ -1,5 +1,4 @@
 <?php session_start();
-
     //connection avec la base de donnée
    $mysqli = new mysqli('localhost','root','','moduleconnexion'); /*connexion avec la base de donnée -> rajouter de nouveau utilisateurs*/
    if($mysqli->connect_error){
@@ -37,7 +36,7 @@
             $result=$request->fetch_all();
             $password_hash=$result[0][4]; // <-retrouve mot de passe crypté
             //echo $password_hash; // <- pour verifier si la variable est bonne
-            if (password_verify($password_post, $password_hash)) {
+            if (password_verify($password_post, $password_hash)) {    //<=password verify pour checker un mot de passe crypté
                 $requete = "SELECT count(*) FROM utilisateurs where login = '$login' and password= '$password_hash'"; //recherche si login et password cripté existe
                 $exec_requete = mysqli_query($mysqli,$requete);
                 $reponse = mysqli_fetch_array($exec_requete);
