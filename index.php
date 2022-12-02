@@ -27,7 +27,7 @@
            
             <h1>Bienvenue sur notre super site !</h1>
             <?php
-                include 'dbconnect-connection.php'; // fichier pour les conditions de connection
+                //include 'dbconnect-connection.php'; // fichier pour les conditions de connection
             ?>
 
 

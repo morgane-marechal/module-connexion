@@ -4,7 +4,6 @@
    if($mysqli->connect_error){
        die('Erreur : ' .$mysqli->connect_error);
    }
-   echo '<b>Connexion réussie avec la base de donnée (à retirer ensuite)</b><br>'; /*vérifie connexion avec base de donnée*/   
 
    //création de variable
    $login = mysqli_real_escape_string($mysqli,htmlspecialchars($_POST['login'])); //protection pour éviter injection SQL malveillante

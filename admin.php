@@ -1,24 +1,15 @@
 <?php session_start();
-     $mysqli = new mysqli('localhost','root','','moduleconnexion');
+     include 'db-connect.php';
     
      /*
-     if($connection->connect_error){
-         die('Erreur : ' .$connection->connect_error);
-     }
-     echo 'Connexion réussie';
-     
- 
      if(!$mysqli){
          die('Erreur : ' .mysqli_connect_error());
      }
      echo 'Connexion réussie!';*/
- 
      $request=$mysqli->query("SELECT * FROM utilisateurs");
      $result_fetch_all = $request->fetch_all();
-    
      //var_dump($result_fetch_all);
 ?>
-
 
 <head>
     <meta charset="utf-8"/>
@@ -68,7 +59,6 @@
         </table>
 </div>
 
-    
     <footer>
                 <ul>
                     <li><a href="https://github.com/morgane-marechal/module-connexion" target="_blank" ><img class="logo" src="github-noir.png" alt="github"></a></li>

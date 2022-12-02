@@ -1,4 +1,5 @@
 <?php session_start();
+include 'db-connect.php';
 ?>
 
 <head>
@@ -31,7 +32,6 @@
 
                     // ----$_session pour afficher diff données-----
                     $newlogin=$_SESSION['login'];
-                    $mysqli=new mysqli('localhost', 'root', '', 'moduleconnexion');
                     $request=$mysqli->query("SELECT * FROM utilisateurs where login = '$newlogin'");
                     $result=$request->fetch_all();
                     
@@ -65,12 +65,12 @@
                 <form id="profil-form" action="" method="post" autocomplete="off">
                     <h3>Modification du compte</h3>
                     <div id="fullname">
-                        <input type="text" name="newlogin" id="login" placeholder= "<?php echo $result[0][1]; ?>" maxlength="255">
-                        <input type="text" name="newnom" id="name" placeholder="<?php echo $result[0][3]; ?>" maxlength="255">
-                        <input type="text" name="newprenom" id="firstname" placeholder="<?php echo $result[0][2]; ?>" maxlength="255">
+                        <input type="text" name="newlogin" id="login" placeholder= "<?php echo $result[0][1]; ?>" minlength="3" autocomplete="off">
+                        <input type="text" name="newnom" id="name" placeholder="<?php echo $result[0][3]; ?>" minlength="3">
+                        <input type="text" name="newprenom" id="firstname" placeholder="<?php echo $result[0][2]; ?>" minlength="3">
                     </div>
-                    <input type="password" name="newpassword" id="password" placeholder= "<?php echo $_SESSION['password']; ?>" maxlength="255">
-                    <input type="password" name="newconf_password" id="conf_password" placeholder="<?php echo $_SESSION['password']; ?>" maxlength="255">
+                    <input type="password" name="newpassword" id="password" placeholder= "*****" maxlength="255">
+                    <input type="password" name="newconf_password" id="conf_password" placeholder="*****" maxlength="255">
 
                     </select>
                     <input class="submit" type="submit" value="Modifier">
