@@ -21,7 +21,7 @@
                     </nav>
     </header>
     <div id=welcome>
-        <h1>Bienvenue <?php echo $_SESSION['login'] ?></h1>
+        <h1>Bienvenue </h1>
     </div>
         <div id="content">
            
