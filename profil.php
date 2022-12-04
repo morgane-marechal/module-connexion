@@ -69,9 +69,10 @@ include 'db-connect.php';
                         <input type="text" name="newnom" id="name" placeholder="<?php echo $result[0][3]; ?>" minlength="3">
                         <input type="text" name="newprenom" id="firstname" placeholder="<?php echo $result[0][2]; ?>" minlength="3">
                     </div>
-                    <input type="password" name="newpassword" id="password" placeholder= "*****" maxlength="255">
-                    <input type="password" name="newconf_password" id="conf_password" placeholder="*****" maxlength="255">
-
+                    <input type="password" name="newpassword" id="password" placeholder= "*****" minlength="5">
+                    <input type="password" name="newconf_password" id="conf_password" placeholder="*****" minlength="5">
+                    <?php if(($_POST['newpassword']) && ($_POST['newconf_password']) && (($_POST['newpassword']) == ($_POST['newconf_password']))) 
+                    {echo "<p>Vous avez bien changé votre mot de passe en ".$_POST['newpassword']."</p>"; }?>
                     </select>
                     <input class="submit" type="submit" value="Modifier">
                     <i class="small">* Mofidier le champs que vous voulez changer, un seul champs à la fois.</i>

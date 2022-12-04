@@ -34,13 +34,14 @@
             <h3>Création de compte</h3>
             <div id="fullname">
                 <input type="text" name="login" id="name" placeholder="Login*" required minlength="3">
-                <?php if ($count==1){ echo $error_login;}?>
+                <?php if ($count==1){ echo "<p>$error_login</p>";}?>
                 <input type="text" name="nom" id="name" placeholder="Nom*" required minlength="2">
                 <input type="text" name="prenom" id="firstname" placeholder="Prénom*" required minlength="2">
             </div>
             <input type="password" name="password" id="password" placeholder="Password*" required minlength="2">
             <input type="password" name="conf_password" id="conf_password" placeholder="Confirmation du mot de passe*" required minlength="2">
             </select>
+            <?php if ($password!=$checkpassword){echo $error_password;}?>
             <input class="submit" type="submit" value="Envoyer">
             <i class="small">* Champs obligatoires</i>
         </form>

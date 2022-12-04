@@ -5,7 +5,6 @@
 }
 
 body{
-    padding:1%,1%,1%,1%;
     height:100%;
     background-color: #9fcabd;
 
@@ -14,11 +13,26 @@ body{
 #content{
     background-color: #9fcabd;
     height:100%;
+
+}
+
+#content h1{
+    font-size: 3em;
+    margin-top:2%;
+    text-align: center;
+}
+
+#content-home{
+    background-color: #9fcabd;
+    height:100%;
+}
+#content-home h1{
+    color:pink;
 }
 
 #content-profil{
     background-color: #9fcabd;
-    height:100%;
+    height:110%;
     display:flex;
 }
 
@@ -70,6 +84,7 @@ li.menuDeroulant:hover > .sousMenu {
 #welcome{
     color:#00adb9;
     background-color: black;
+    
 }
 /*---formulaire de connexion---*/
 
@@ -115,7 +130,13 @@ form {
 form h3{
     font-size: 1.4em;
     color: #94fadb;
-    margin-bottom:20px;
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+p{
+    color:white;
+    margin-bottom:10px;
 }
 
 label{
@@ -124,7 +145,8 @@ label{
 }
 
 input, select{
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     height:2em;
     font-size: 1.2em;
 }

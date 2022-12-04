@@ -40,10 +40,10 @@
                 " . $mysqli->error;
                 }
         }elseif ((empty($name)) OR (empty($firstname)) OR (empty($password))){
-            $error_empty="L'un des champs du formulaire est vide";
+            $error_empty="<p>L'un des champs du formulaire est vide<p>";
             echo $error_empty;
         }elseif ($password!=$checkpassword){
-            $error_password="Veuillez confirmer correctement votre mot de passe!";
+            $error_password="<p>Veuillez confirmer correctement votre mot de passe!</p>";
             echo $error_password;
         }
     }

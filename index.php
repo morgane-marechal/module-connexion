@@ -25,7 +25,7 @@
     </div>
         <div id="content">
            
-            <h1>Bienvenue sur notre super site !</h1>
+            <h1>Partageons nos visions !</h1>
             <?php
                 //include 'dbconnect-connection.php'; // fichier pour les conditions de connection
             ?>

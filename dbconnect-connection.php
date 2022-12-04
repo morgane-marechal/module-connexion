@@ -59,12 +59,14 @@
                     }
                     else
                     {
-                    echo "Utilisateur ou mot de passe incorrect!";
+                    $error_info = "Utilisateur ou mot de passe incorrect!";
+                    echo $error_info;
                     }
                 }
             }
         }
             mysqli_close($mysqli);
+            echo $error_info;
             
         
 ?>  

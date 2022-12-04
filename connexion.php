@@ -26,6 +26,9 @@
     <div id=welcome>
         <h1>Bienvenue <?php echo $_SESSION['login'] ?></h1>
     </div>
+    <?php 
+        include 'dbconnect-connection.php'; // fichier pour les conditions de connection
+    ?>
     <section id="compte_form">
         <form action="" method="post">
             <h3>Connexion</h3>
@@ -34,13 +37,12 @@
             </div>
             <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe*" required maxlength="255">
             </select>
+            <?php if ($count==0){ echo "<p>$error_info</p>";}?>
             <input class="submit" type="submit" value="Envoyer">
             <i class="small">* Champs obligatoires</i>
         </form>
     </section>
-        <?php 
-        include 'dbconnect-connection.php'; // fichier pour les conditions de connection
-        ?>
+
     
 
     <footer>
