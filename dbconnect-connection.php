@@ -1,6 +1,6 @@
 <?php session_start();
     //connection avec la base de donnée
-   $mysqli = new mysqli('localhost','root','','moduleconnexion'); /*connexion avec la base de donnée -> rajouter de nouveau utilisateurs*/
+   $mysqli = new mysqli('host','','','moduleconnexion'); /*connexion avec la base de donnée -> rajouter de nouveau utilisateurs*/
    if($mysqli->connect_error){
        die('Erreur : ' .$mysqli->connect_error);
    }
